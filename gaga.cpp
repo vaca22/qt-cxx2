@@ -14,7 +14,7 @@ using namespace std;
 gaga::gaga(QWidget *parent) :
         QWidget(parent), ui(new Ui::gaga) {
     ui->setupUi(this);
-    connect(ui->pushButton, SIGNAL(clicked(bool)),this, SLOT(on_pushButton_clicked()));
+    //connect(ui->pushButton, SIGNAL(clicked(bool)),this, SLOT(on_pushButton_clicked()));
 }
 
 gaga::~gaga() {

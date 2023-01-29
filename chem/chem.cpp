@@ -79,7 +79,7 @@ void ChemEquation::setChem(const char *chem)
 {
     int chemLen = strlen(chem);
 
-    chemMine = (char *)malloc(sizeof(char) * chemLen);
+    chemMine = (char *)malloc(sizeof(char) * chemLen+1);
 
     int chemMineIndex = 0;
 

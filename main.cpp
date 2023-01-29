@@ -6,9 +6,9 @@
 
 using namespace std;
 int main(int argc, char *argv[]) {
-//    ChemEquation *chemEquation = new ChemEquation("H2+O2=H2O");
-//    string result=chemEquation->myResult();
-//    delete chemEquation;
+    ChemEquation *chemEquation = new ChemEquation("H2+O2=H2O");
+    string result=chemEquation->myResult();
+    delete chemEquation;
 
 //    cout<<result<<endl;
 

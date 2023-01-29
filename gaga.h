@@ -22,6 +22,8 @@ public:
 
 private:
     Ui::gaga *ui;
+private slots:
+    void on_pushButton_clicked();
 };
 
 

@@ -23,12 +23,16 @@ find_package(Qt5 COMPONENTS
 
 add_definitions(-DHAVE_STRUCT_TIMESPEC)
 
+include_directories(${CMAKE_SOURCE_DIR}/libjuice-1.2.3/include)
 include_directories(${CMAKE_SOURCE_DIR}/pthread/include)
 include_directories(${CMAKE_SOURCE_DIR}/lws/include)
+
+
+add_subdirectory(${CMAKE_SOURCE_DIR}/libjuice-1.2.3)
 aux_source_directory(chem CHEM_SRC)
 add_executable(untitled23 ${CHEM_SRC} main.cpp
         ui/gaga.cpp ui/gaga.h ui/gaga.ui
-        test_ws.cpp test_ws.h )
+        test_ws.cpp test_ws.h test_juice.c test_juice.h)
 target_link_libraries(untitled23
         Qt5::Core
         Qt5::Gui
@@ -54,6 +58,7 @@ target_link_libraries(untitled23
         advapi32.lib
 
         ${CMAKE_SOURCE_DIR}/pthread/lib/x64/pthreadVC2.lib
+        juice
         )
 
 if (WIN32)

@@ -26,13 +26,17 @@ add_definitions(-DHAVE_STRUCT_TIMESPEC)
 include_directories(${CMAKE_SOURCE_DIR}/libjuice-1.2.3/include)
 include_directories(${CMAKE_SOURCE_DIR}/pthread/include)
 include_directories(${CMAKE_SOURCE_DIR}/lws/include)
-
+include_directories(${CMAKE_SOURCE_DIR}/cJSON-1.7.15)
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/libjuice-1.2.3)
+add_subdirectory(${CMAKE_SOURCE_DIR}/cJSON-1.7.15)
 aux_source_directory(chem CHEM_SRC)
 add_executable(untitled23 ${CHEM_SRC} main.cpp
         ui/gaga.cpp ui/gaga.h ui/gaga.ui
-        test_ws.cpp test_ws.h test_juice.c test_juice.h)
+        test_ws.cpp test_ws.h test_juice.c test_juice.h
+        kcp/ikcp.c kcp/ikcp.h
+
+        )
 target_link_libraries(untitled23
         Qt5::Core
         Qt5::Gui

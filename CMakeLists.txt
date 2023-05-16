@@ -21,12 +21,39 @@ find_package(Qt5 COMPONENTS
         REQUIRED)
 
 
+add_definitions(-DHAVE_STRUCT_TIMESPEC)
+
+include_directories(${CMAKE_SOURCE_DIR}/pthread/include)
+include_directories(${CMAKE_SOURCE_DIR}/lws/include)
 aux_source_directory(chem CHEM_SRC)
-add_executable(untitled23 ${CHEM_SRC} main.cpp ui/gaga.cpp ui/gaga.h ui/gaga.ui)
+add_executable(untitled23 ${CHEM_SRC} main.cpp
+        ui/gaga.cpp ui/gaga.h ui/gaga.ui
+        test_ws.cpp test_ws.h )
 target_link_libraries(untitled23
         Qt5::Core
         Qt5::Gui
         Qt5::Widgets
+
+        ${CMAKE_SOURCE_DIR}/lws/websockets_static.lib
+        ws2_32.lib
+        userenv.lib
+        psapi.lib
+        iphlpapi.lib
+        crypt32.lib
+        ${CMAKE_SOURCE_DIR}/openssl_lib/libssl64MD.lib
+        ${CMAKE_SOURCE_DIR}/openssl_lib/libcrypto64MD.lib
+        kernel32.lib
+        user32.lib
+        gdi32.lib
+        winspool.lib
+        shell32.lib
+        ole32.lib
+        oleaut32.lib
+        uuid.lib
+        comdlg32.lib
+        advapi32.lib
+
+        ${CMAKE_SOURCE_DIR}/pthread/lib/x64/pthreadVC2.lib
         )
 
 if (WIN32)

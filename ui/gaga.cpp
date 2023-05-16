@@ -7,7 +7,7 @@
 #include <iostream>
 #include "gaga.h"
 #include "ui_gaga.h"
-#include "chem/chem.h"
+#include "../chem/chem.h"
 
 using namespace std;
 

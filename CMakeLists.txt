@@ -22,7 +22,7 @@ find_package(Qt5 COMPONENTS
 
 
 aux_source_directory(chem CHEM_SRC)
-add_executable(untitled23 ${CHEM_SRC} main.cpp gaga.cpp gaga.h gaga.ui)
+add_executable(untitled23 ${CHEM_SRC} main.cpp ui/gaga.cpp ui/gaga.h ui/gaga.ui)
 target_link_libraries(untitled23
         Qt5::Core
         Qt5::Gui
